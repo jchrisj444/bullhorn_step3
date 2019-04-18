@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bootstrap 101 Template</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+
+        <a class="btn btn-primary btn-lg" href="/">Post Details</a> &nbsp; <a class="btn btn-primary btn-lg" href="/add"/>Post a Message</a><br /><br />
+        Post : <span th:text="${messagepost.content}" ></span><br />
+        Posted Date : <span th:text="${messagepost.posteddate}" ></span><br />
+        Sent By : <span th:text="${messagepost.sentby}" ></span><br /><br />
+        <a class="btn btn-primary btn-lg" th:href="@{/delete/{id}(id=${messagepost.id})}">Delete this post</a>
+    </div>
+</div>
+</body>
+</html>
